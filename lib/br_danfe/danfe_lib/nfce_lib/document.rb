@@ -6,8 +6,8 @@ module BrDanfe
           @document = BrDanfe::DocumentBuilder.build(
             page_size: [page_width, page_height],
             page_layout: :portrait,
-            left_margin: 0.3.cm,
-            right_margin: 0.3.cm,
+            left_margin: 0.5.cm,
+            right_margin: 0.5.cm,
             top_margin: 0.3.cm,
             botton_margin: 0
           )
@@ -18,6 +18,13 @@ module BrDanfe
 
         def render_blank_line(font_size = 6)
           @document.text ' ', size: font_size
+        end
+
+        def draw_horizontal_line
+          @document.stroke do
+            @document.stroke_color('000000')
+            @document.horizontal_line(0, 7.cm)
+          end
         end
 
         def method_missing(method_name, *args, &block)

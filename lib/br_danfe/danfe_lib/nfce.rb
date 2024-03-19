@@ -1,7 +1,7 @@
 module BrDanfe
   module DanfeLib
     class Nfce < Base
-      PAGE_WIDTH = 7.cm
+      PAGE_WIDTH = 8.cm
       PAGE_HEIGHT = 100.cm
 
       private
